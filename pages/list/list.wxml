@@ -1,0 +1,120 @@
+<!--pages/list/list.wxml-->
+<!-- <text>pages/list/list.wxml</text> -->
+<view class="container">
+    <!-- 推荐 -->
+    <view class="recommend-container">
+        <view class="recommend-article">
+            <text class="date">{{recommend.date}}</text>
+            <text class="recommend-title">{{recommend.title}}</text>
+            <image class="recommend-cover" src="{{recommend.imgSrc}}" mode="widthFix" lazy-load="false" binderror="" bindload=""></image>
+        </view>
+        <view class="recommend-box">
+            <text>+</text>
+            <text bindtap="onArticleTypeTap" data-articletypeid="{{item.typeId}}" wx:for="{{markType}}" wx:key="typeId">{{item.type}}</text>
+            <text>···</text>
+        </view>
+    </view>
+    <!-- 列表 -->
+    <!-- <view class="recommend-list-container">
+        <view class="per-article">
+            <view class="article-head">
+                <image class="" src="/image/touxiang.jpg"></image>
+                <text class="">neffy</text>
+                <text class="">等</text>
+                <text class="">96</text>
+                <text class="">人马克了</text>
+            </view>
+            <view class="article-cover">
+                <image class="" src="/image/list/article/1.png" mode="widthFix" lazy-load="false" binderror="" bindload=""></image>
+            </view>
+            <view class="article-title">
+                <text class="">发货价快乐玩带娃好人挺好挺好公认的好的人头</text>
+            </view>
+            <view class="article-handle-box">
+                <view class="article-type">
+                    <text class="">深度阅读</text>
+                </view>
+                <view class="article-handle">
+                    <view>
+                        <image class="" src="/image/list/article/icon/Icon_more.png"></image>
+                    </view>
+                    <view>
+                        <image class="" src="/image/list/article/icon/Icon_relay.png"></image>
+                    </view>
+                    <view>
+                        <image class="" src="/image/list/article/icon/Icon_circle.png"></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="recommend-list-container">
+        <view class="per-article">
+            <view class="article-head">
+                <image class="" src="/image/touxiang.jpg"></image>
+                <text class="">neffy</text>
+                <text class="">等</text>
+                <text class="">96</text>
+                <text class="">人马克了</text>
+            </view>
+            <view class="article-cover">
+                <image class="" src="/image/list/article/1.png" mode="widthFix" lazy-load="false" binderror="" bindload=""></image>
+            </view>
+            <view class="article-title">
+                <text class="">发货价快乐玩带娃好人挺好挺好公认的好的人头</text>
+            </view>
+            <view class="article-handle-box">
+                <view class="article-type">
+                    <text class="">深度阅读</text>
+                </view>
+                <view class="article-handle">
+                    <view>
+                        <image class="" src="/image/list/article/icon/Icon_more.png"></image>
+                    </view>
+                    <view>
+                        <image class="" src="/image/list/article/icon/Icon_relay.png"></image>
+                    </view>
+                    <view>
+                        <image class="" src="/image/list/article/icon/Icon_circle.png"></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view> -->
+    <view class="recommend-list-container" wx:for="{{articleList}}" wx:key="id">
+        <view class="per-article">
+            <view class="article-head">
+                <image class="" src="{{item.markPeopleAvatar}}"></image>
+                <text class="">{{item.markPeople}}</text>
+                <text class="">等</text>
+                <text class="">{{item.markCount}}</text>
+                <text class="">人马克了</text>
+            </view>
+            <view class="article-cover">
+                <image class="" src="{{item.articleImgSrc}}" mode="widthFix" lazy-load="false" binderror="" bindload=""></image>
+            </view>
+            <view class="article-title">
+                <text class="">{{item.articleTitle}}</text>
+            </view>
+            <view class="article-handle-box">
+                <view class="article-type">
+                    <text class="">{{item.articleType}}</text>
+                </view>
+                <view class="article-handle">
+                    <view>
+                        <image class="" bindtap="onMoreTap" data-articleType="{{item.articleType}}" src="/image/list/article/icon/Icon_more.png"></image>
+                    </view>
+                    <view>
+                        <button open-type="share" class="shareBtn">
+                            <image class="" src="/image/list/article/icon/Icon_relay.png"></image>
+                        </button>
+                    </view>
+                    <view>
+                        <image wx:if="{{listLike[index]}}" bindtap="onLikeTap" data-index="{{index}}"class="" src="/image/list/article/icon/Icon_circle_fill.png"></image>
+                        <image wx:else bindtap="onLikeTap" data-index="{{index}}" class="" src="/image/list/article/icon/Icon_circle.png"></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

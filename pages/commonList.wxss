@@ -1,0 +1,75 @@
+/* 公用的列表样式 */
+
+.recommend-list-container{
+    background-color:#ebebeb;
+    padding:35rpx 35rpx 0; 
+}
+.per-article{
+    background-color:#fff;
+    padding-bottom:30rpx;
+    margin-bottom:30rpx;
+
+}
+.per-article:last-of-type{
+    margin-bottom:0;
+}
+
+.article-head{
+    padding:20rpx;
+}
+
+.article-head image{
+    width:60rpx;
+    height:60rpx;
+    border-radius: 50%;
+    vertical-align: middle;
+    margin-right:10rpx;
+}
+.article-head text{
+    font-size:28rpx;
+    color:#666;
+}
+
+.article-cover image{
+    width:100%;
+}
+
+.article-title{
+    margin:30rpx;
+}
+.article-title text{
+    font-size:40rpx;
+}
+.article-handle-box{
+    display:flex;
+    padding:0 30rpx;
+    justify-content:space-between;
+}
+.article-type text{
+    border:1px solid #000;
+    padding:10rpx 20rpx;
+}
+.article-handle{
+    display:flex;
+}
+.article-handle image{
+    width:50rpx;
+    height:50rpx;
+    margin-left:20rpx;
+
+}
+.shareBtn{
+    position: relative;
+    bottom:8rpx;
+    background-color:transparent;
+    padding:0;
+    width:50rpx;
+    height:50rpx;
+    margin-left:20rpx;
+}
+.shareBtn::after{
+    border:none;
+}
+.shareBtn image{
+    margin-left:0px;
+}

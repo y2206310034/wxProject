@@ -1,0 +1,53 @@
+<!--pages/type/type.wxml-->
+<!-- <text>pages/type/type.wxml</text> -->
+<view class="container">
+    <view class="article-type-container">
+        <image class="type-image" src="{{articleTypeTitleInfo.imgSrc}}"></image>
+        <view class="type-title">
+            <view class="type-title-info">
+                <text>{{articleTypeTitleInfo.title}}</text>
+            </view>
+            <view class="type-more-share">
+                <button open-type="share" class="shareBtn btn">
+                    <image src="/image/list/article/icon/Icon_relay.png"></image>
+                </button>    
+                <image src="/image/list/article/icon/Icon_more.png" class="btn"></image>                
+            </view>
+        </view>
+    </view>
+    <view class="recommend-list-container" wx:for="{{articleTypeList}}" wx:key="id">
+        <view class="per-article">
+            <view class="article-head">
+                <image class="" src="{{item.markPeopleAvatar}}"></image>
+                <text class="">{{item.markPeople}}</text>
+                <text class="">等</text>
+                <text class="">{{item.markCount}}</text>
+                <text class="">人马克了</text>
+            </view>
+            <view class="article-cover" bindtap="onArticleDetailTap" data-articleDetailId="{{item.id}}">
+                <image class="" src="{{item.articleImgSrc}}" mode="widthFix" lazy-load="false" binderror="" bindload=""></image>
+            </view>
+            <view class="article-title" bindtap="onArticleDetailTap" data-articleDetailId="{{item.id}}">
+                <text class="">{{item.articleTitle}}</text>
+            </view>
+            <view class="article-handle-box">
+                <view class="article-type">
+                    <text class="">{{item.publishTime}}</text>
+                </view>
+                <view class="article-handle">
+                    <view>
+                        <image class="" src="/image/list/article/icon/Icon_more.png"></image>
+                    </view>
+                    <view>
+                        <button open-type="share" class="shareBtn">
+                            <image class="" src="/image/list/article/icon/Icon_relay.png"></image>
+                        </button>
+                    </view>
+                    <view>
+                        <image class="" src="/image/list/article/icon/Icon_circle.png"></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,27 @@
+/* pages/inside/inside.wxss */
+
+.container{
+    margin:0 10rpx;
+    width:730rpx;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    /* margin-top:200rpx; */
+    /* background-color:#00b26a; */
+}
+.picture{
+    width:720rpx;
+}
+text{
+    /* font-size:40rpx; */
+    width:20em;
+    font-size:36rpx;
+    letter-spacing: 4rpx;   
+    line-height:76rpx;
+}
+.from{
+    width:100%;
+    text-align: right;
+    /* height:100rpx;
+    line-height:100rpx; */
+}

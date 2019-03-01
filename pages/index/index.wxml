@@ -1,0 +1,28 @@
+<!--pages/index/index.wxml-->
+<!-- <text>pages/index/index.wxml</text> -->
+
+
+<view class="container" hover-class="none" hover-stop-propagation="false">
+    <!-- 下边两句的效果相同第一个是相对路径第二个是绝对路径   
+    在小程序中绝对路径的根目录就是整个小程序的文件夹（eg："我当前的根目录就是myFirstDemo"） -->
+    <!-- <image class="" src="../../image/touxiang.jpg" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image> -->
+    <image class="touxiang" src="/image/touxiang.jpg" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+
+    <!-- 1.如何在text中添加空格  更改text组件上的decode 和  sapce -->
+    <text class="name" selectable="false" space="ensp" decode="true">杨       宇</text>
+
+
+
+    <!-- <navigator class="try-nav" target="" url="../inside/inside" hover-class="navigator-hover" open-type="navigate">
+        <text class="try" selectable="false" space="false" decode="false">这是第一次写</text>
+    </navigator> -->
+    <!-- 不适用组建使用事件实现跳转 -->
+    <text bind:tap="goto" class="try" selectable="false" space="false" decode="false">这是第一次写</text>
+    <!-- 2.图片如何实现自适应 rpx 所有机型的宽度为750rpx  高度为1334rpx -->
+</view>
+
+
+<!-- <view class="hover-btn" hover-class="hover-btn-change">
+    <view class="btn-son" hover-class="btn-son-change" hover-stop-propagation="fasle">
+    </view>
+</view> -->

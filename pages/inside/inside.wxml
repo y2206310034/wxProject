@@ -1,0 +1,8 @@
+<!--pages/inside/inside.wxml-->
+<!-- <text>pages/inside/inside.wxml</text> -->
+
+<view class="container" hover-class="none" hover-stop-propagation="false">
+    <image class="picture" src="/image/picture.png" mode="widthFix" lazy-load="false" binderror="" bindload=""></image>
+    <text class="p" selectable="false" space="false" decode="false">是否要卸下残红熄火骄纵才会被施以恩宠也曾是朱砂心口月光窗头怀一腔热血孤勇</text>
+    <text class="from" selectable="false" space="false" decode="false" bind:tap="ceshi">--- 既生厌 - 昙骨</text>
+</view>
