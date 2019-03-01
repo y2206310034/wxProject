@@ -1,0 +1,81 @@
+<!--pages/articleDetial/articleDetail.wxml-->
+<!-- <text>pages/articleDetial/articleDetail.wxml</text> -->
+<wxs module ="timeCalc" src = "../../utils/timeCalc.wxs"></wxs>
+<view class="container">
+    <view class="title-container">
+        <text>{{articleDetail.title}}</text>
+    </view>
+    <view class="authorAndDate">
+        <text>{{articleDetail.author}}</text>
+        <text>{{articleDetail.publishTime}}</text>
+    </view>
+    <view class="media-container">
+
+
+        <swiper wx:if="{{articleDetail.banner[0]}}" class="swiper" indicator-dots = "true" autoplay="true" interval = "3000" circular="true">
+            <!-- 使用block并不会对结构产生影响 -->
+            <block wx:for="{{articleDetail.banner}}">
+                <swiper-item>
+                    <image src="{{item}}"></image>
+                </swiper-item>  
+            </block>
+        </swiper>
+
+
+        <video wx:elif="{{articleDetail.video.src}}"src="{{articleDetail.video.src}}" class="video" id = "myVideo" danmu-btn="true" enable-danmu="true" danmu-list="{{danmuList}}">
+            <!-- 该组件中的poster并不能实现封面  我们需要自己添加一个覆盖层来实现封面 -->
+            <cover-view hidden="{{videoPlay}}">
+                <cover-image src="{{articleDetail.video.poster}}" class="videoPoster"></cover-image>
+                <cover-view class="controls" bindtap="onVideoPlay">
+                    <cover-image src="../../image/list/article/icon/videoPlay.png"></cover-image>
+                    <cover-view>{{articleDetail.video.duration}}</cover-view>
+                </cover-view>
+            </cover-view>
+        </video>
+
+
+        <!-- 由于小程序提供的audio不再维护因此我们不使用audio组件 -->
+        <view class="audio-container" wx:elif="{{articleDetail.audio.src}}">
+            <view class="audio-controler" bindtap="onAudioPlayTap">
+                <image src="../../image/list/article/icon/audioPlay.png" wx:if="{{audioPause}}"></image>
+                <image src="../../image/list/article/icon/audioPause.png" wx:else></image>
+            </view>
+            <view class="audio-info">
+                <view class="audio-title">
+                    <text>{{articleDetail.audio.audioTitle}}</text>
+                </view>
+                <view class="audio-form">
+                    <text>{{articleDetail.audio.from}}</text>
+                </view>
+                <view class="audio-progress">
+                    <progress activeColor="#1afa29" percent="{{progressPercent}}"></progress>
+                    <view class="progress-circle" style="left:{{progressCircleLeft + 'rpx'}}" bindtouchstart="onAudioCircleStart" bindtouchmove="onAudioCircleMove"></view>
+                </view>
+                <view class="audio-time">
+                    <text>{{timeCalc( audioCurTime )}}</text>
+                    <text>{{timeCalc( articleDetail.audio.duration)}}</text>
+                </view>
+            </view>
+        </view>
+
+
+
+
+        
+    </view>
+    <view class="content-container">
+        <text decode="true">{{filter( articleDetail.content )}}</text>        
+    </view>
+    <view class='read-container'>
+        <text>阅读</text>
+        <text>  {{articleDetail.readNum}}</text>
+    </view>
+</view>
+
+<wxs module="filter">
+    var filter =function(text){
+        var reg = getRegExp("\\n","g");
+        return text.replace(reg,"\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;")
+    };
+    module.exports = filter;
+</wxs>

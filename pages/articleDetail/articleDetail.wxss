@@ -1,0 +1,148 @@
+/* pages/articleDetial/articleDetail.wxss */
+.container{
+    margin: 0 10rpx;
+}
+.title-container{
+    margin: 30rpx 0; 
+}
+.title-container text{
+    font-size:56rpx;
+}
+.authorAndDate text{
+    font-size:32rpx;
+    color:#999;
+    margin-right:20rpx;
+}
+
+
+/* 媒体部分   轮播图   视频  音频 */
+
+.media-container{
+    display:flex;
+    justify-content: center;
+}
+.media-container .swiper{
+    width:750rpx;
+    height:500rpx;
+}
+.media-container .swiper image{
+    width:100%;
+    height:100%;
+}
+
+/* 视频 */
+
+.video{
+    position: relative;
+    width:750rpx;
+    height:500rpx;
+}
+.videoPoster{
+    width:100%;
+    height:500rpx;
+}
+.controls{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    left:50%;
+    top:50%;
+    margin-top:-60rpx;
+    margin-left:-60rpx;
+    width:120rpx;
+    height:120rpx;
+    background-color:#999;
+    border-radius: 50%;
+}
+.controls cover-image{
+    margin-top:20rpx;
+    width:60rpx;
+    height:60rpx;
+}
+.controls cover-view{
+    font-size:24rpx;
+}
+
+
+/* 音频 */
+
+.audio-container{
+    display:flex;
+    justify-content: space-around;
+    margin:30rpx;
+}
+
+.audio-controler{
+    width:180rpx;
+}
+.audio-controler image{
+    width:120rpx;
+    height:120rpx;
+    margin:30rpx;
+}
+
+
+.audio-title text{
+    font-size:40rpx;
+}
+.audio-form,
+.audio-time{
+    margin:10rpx 0;
+}
+.audio-form text{
+    font-size:36rpx;
+    color:#999;
+}
+
+.audio-progress{
+    position: relative;
+}
+.audio-progress progress{
+    width:500rpx;
+}
+
+.audio-progress .progress-circle{
+    width:20rpx;
+    height:20rpx;
+    border-radius: 50%;
+    background-color:rgb(27,250,42);
+    position: absolute;
+    left:0;
+    top:-4rpx;
+}
+.audio-time{
+    display:flex;
+    justify-content: space-between;
+}
+.audio-time text{
+    font-size:32rpx;
+    color:#999;
+}
+
+
+
+
+
+
+
+
+
+
+.content-container{
+    text-indent:2em;
+}
+.content-container text{
+    /* 在text中text-indent无用 */
+    /* text-indent:40rpx; */
+    font-size:50rpx;
+}
+
+.read-container{
+    margin:30rpx 0;
+}
+.read-container text{
+    font-size:34rpx;
+    margin-right:20rpx;
+}
+

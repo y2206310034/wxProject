@@ -1,0 +1,13 @@
+
+
+
+var timeCalc= function(time){
+    var seconed = ( time % 60 ).toFixed();
+    var minute = ( ( time - seconed )/ 60 ).toFixed();
+
+    minute = minute < 10 ? "0" + minute : minute;
+    seconed = seconed < 10 ? "0" + seconed : seconed; 
+    return minute + ":" + seconed;
+}
+
+module.exports = timeCalc;

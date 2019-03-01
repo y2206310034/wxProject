@@ -1,5 +1,6 @@
 <!--pages/type/type.wxml-->
 <!-- <text>pages/type/type.wxml</text> -->
+
 <view class="container">
     <view class="article-type-container">
         <image class="type-image" src="{{articleTypeTitleInfo.imgSrc}}"></image>

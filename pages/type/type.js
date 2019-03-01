@@ -47,7 +47,9 @@ Page({
   },
   onArticleDetailTap:function(e){
     var id = e.currentTarget.dataset.articledetailid;
-    console.log(id);
+    wx.navigateTo({
+      url:"../articleDetail/articleDetail?id="+id
+    })
   },
 
   /**
